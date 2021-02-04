@@ -52,24 +52,36 @@ function App() {
         <Grid container spacing={2}>
           <Grid item xs={12} sm={4}>
             {users.map((user) => (
-              <UserList user={user} />
+              <UserList key={user.id} user={user} />
             ))}
           </Grid>
           <Divider variant='middle' orientation='vertical' flexItem />
           <Grid item xs={12} sm={7}>
-            <Paper>
+            {selected ? (
               <Grid
                 container
                 direction='column'
-                justify='center'
                 alignItems='center'
                 className={classes.message}
               >
-                <Grid item>
-                  <h5>Click Chat to start messaging</h5>
-                </Grid>
+                <Message data={messages} />
               </Grid>
-            </Paper>
+            ) : (
+              <Paper>
+                <Grid
+                  container
+                  direction='column'
+                  justify='center'
+                  alignItems='center'
+                  className={classes.message}
+                >
+                  <Grid item>
+                    <h5>Click Chat to start messaging</h5>
+                  </Grid>
+                </Grid>
+              </Paper>
+            )}
+
             {selected && <SendField />}
           </Grid>
         </Grid>

@@ -20,26 +20,26 @@ const initialState = {
     {
       from: '01',
       data:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,',
+        'Lorem ipum dolor sit amet consectetur adipisicing lit. Eligendi,',
       messageTime: '01:22 am',
     },
     {
       from: '02',
       data:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,',
-      messageTime: '01:22 am',
+        'Lorem ipsum dolor sit amet consetetur adipisicing elit. Eligendi,',
+      messageTime: '01:23 am',
     },
     {
       from: '01',
       data:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,',
-      messageTime: '01:22 am',
+        'Lorem ipsum dolor st amet consectetur adipisicing elit. Eligendi,',
+      messageTime: '01:24 am',
     },
     {
         from: '01',
         data:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,',
-        messageTime: '01:22 am',
+          'Lorem ipsm dolor sit amet consectetur adipisicing elit. Eligendi,',
+        messageTime: '01:25 am',
       },
   ],
   selectedUser: '',

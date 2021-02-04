@@ -3,7 +3,7 @@ export default (state, action) => {
     case 'SEND_MESSAGE':
       return {
         ...state,
-        messages: [action.payload, ...state.messages],
+        messages: [...state.messages, action.payload ],
       }
     case 'SELECTED_USER':
       return {
