@@ -19,8 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles()
-  const { messages, users } = useContext(GlobalContext)
-  const [select, setSelect] = useState('')
+  const { messages, users, selected } = useContext(GlobalContext)
 
   return (
     <Container maxWidth='lg'>
@@ -43,7 +42,7 @@ function App() {
           </Grid>
           <Divider variant='middle' orientation='vertical' flexItem />
           <Grid item xs={12} sm={7}>
-            {select && (
+            {selected && (
               <Paper elevation={1}>
                 <Header />
               </Paper>
@@ -71,7 +70,7 @@ function App() {
                 </Grid>
               </Grid>
             </Paper>
-            {select && <SendField />}
+            {selected && <SendField />}
           </Grid>
         </Grid>
       </Paper>

@@ -1,7 +1,8 @@
-import React from 'react';
+import React,{ useContext } from 'react';
 import { Badge, Avatar, Typography } from '@material-ui/core'; 
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import ariana from '../ariana.png';
+import { GlobalContext } from '../utils/GlobalState'
 
 const StyledBadge = withStyles((theme) => ({
   badge: {
@@ -31,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () =>  {
   const classes = useStyles();
-
+  const { selected , users } = useContext(GlobalContext)
+  let user =  users.filter((user) => user.id === selected)
   return (
     <div className={classes.root}>
       <StyledBadge
@@ -44,7 +46,7 @@ const Header = () =>  {
       >
         <Avatar src= {ariana} />
       </StyledBadge>
-      <Typography style={{paddingTop: '6px'}}> Ariana grande</Typography>
+      <Typography style={{paddingTop: '6px'}}> {user[0].name}</Typography>
     </div>
   );
 }

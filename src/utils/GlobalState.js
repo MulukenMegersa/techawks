@@ -42,6 +42,7 @@ const initialState = {
         messageTime: '01:22 am',
       },
   ],
+  selectedUser: '',
 }
 
 export const GlobalContext = createContext(initialState)
@@ -56,12 +57,21 @@ export const GlobalProvider = ({ children }) => {
     })
   }
 
+  function selectedUser(id) {
+    dispatch({
+      type: 'SELECTED_USER',
+      payload: id,
+    })
+  }
+
   return (
     <GlobalContext.Provider
       value={{
         messages: state.messages,
         users: state.users,
+        selected: state.selectedUser,
         sendMessage,
+        selectedUser
       }}
     >
       {children}

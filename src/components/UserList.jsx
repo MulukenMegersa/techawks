@@ -15,6 +15,7 @@ import {
 import ariana from '../ariana.png'
 import { GlobalContext } from '../utils/GlobalState'
 
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     margin: theme.spacing(1),
@@ -25,10 +26,11 @@ const useStyles = makeStyles((theme) => ({
 const UserList = ({ user }) => {
   const classes = useStyles()
   const { users } = useContext(GlobalContext)
+  const { selectedUser } = useContext(GlobalContext);
   return (
     <Grid key={user.id}>
       <Paper elevation={1} className={classes.paper}>
-        <List dense>
+        <List dense onClick={() => selectedUser(user.id)}>
           <ListItem>
             <ListItemAvatar>
               <Avatar src={ariana} />
