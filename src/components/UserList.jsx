@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   Grid,
@@ -25,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
 
 const UserList = ({ user }) => {
   const classes = useStyles()
-  const { users } = useContext(GlobalContext)
   const { selectedUser } = useContext(GlobalContext);
   return (
     <Grid key={user.id}>

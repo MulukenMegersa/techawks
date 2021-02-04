@@ -6,7 +6,6 @@ import {
   IconButton,
 } from '@material-ui/core'
 import SendIcon from '@material-ui/icons/Send'
-import { makeStyles } from '@material-ui/core/styles'
 import { GlobalContext } from '../utils/GlobalState'
 
 const SendField = (props) => {
